@@ -64,10 +64,10 @@ function getInitialLocale(): Locale {
   browserLanguage === "zh-tw" ||
   browserLanguage === "zh-hk" ||
   browserLanguage === "zh-mo" ||
-  browserLanguage.startsWith("zh-hant"))
-    {
+  browserLanguage.startsWith("zh-hant")
+  ) {
   return "zh-hant";
-    }
+}
 
     if (isLocale(browserLanguage)) return browserLanguage;
 
