@@ -61,13 +61,13 @@ function getInitialLocale(): Locale {
     const browserLanguage = navigator.language.toLowerCase();
 
     if (
-  browserLanguage === "zh-tw" ||
-  browserLanguage === "zh-hk" ||
-  browserLanguage === "zh-mo" ||
-  browserLanguage.startsWith("zh-hant")
-) {
+      browserLanguage === "zh-tw" ||
+      browserLanguage === "zh-hk" ||
+      browserLanguage === "zh-mo" ||
+      browserLanguage.startsWith("zh-hant")
+    ) {
   return "zh-hant";
-}
+    }
 
     if (isLocale(browserLanguage)) return browserLanguage;
 
