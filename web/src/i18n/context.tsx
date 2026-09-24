@@ -65,7 +65,7 @@ function getInitialLocale(): Locale {
   browserLanguage === "zh-hk" ||
   browserLanguage === "zh-mo" ||
   browserLanguage.startsWith("zh-hant")
-  ) {
+) {
   return "zh-hant";
 }
 
