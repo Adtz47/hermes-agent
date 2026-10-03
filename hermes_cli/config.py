@@ -9,6 +9,7 @@ from hermes_cli.stale_modules import drop_stale_root_modules
 
 drop_stale_root_modules()
 
+import math
 import copy
 import difflib
 import json
@@ -1894,6 +1895,8 @@ def resolve_turn_limit(raw: Any, default: int = TURN_LIMIT_UNLIMITED) -> int:
     if raw is None or isinstance(raw, bool):
         return default
     if isinstance(raw, (int, float)):
+        if isinstance(raw, float) and not math.isfinite(raw):
+            return TURN_LIMIT_UNLIMITED
         n = int(raw)
     elif isinstance(raw, str):
         s = raw.strip().lower()

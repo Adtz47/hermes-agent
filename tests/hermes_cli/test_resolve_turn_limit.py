@@ -22,6 +22,10 @@ class TestNumericValues:
         assert resolve_turn_limit(3.0) == 3
         assert resolve_turn_limit(100.9) == 100
 
+    @pytest.mark.parametrize("value", [float("inf"), float("nan")])
+    def test_non_finite_float_is_unlimited(self, value):
+        assert resolve_turn_limit(value) == TURN_LIMIT_UNLIMITED
+
     def test_numeric_string(self):
         assert resolve_turn_limit("120") == 120
         assert resolve_turn_limit("3") == 3
